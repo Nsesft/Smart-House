@@ -16,6 +16,8 @@ const TABLE_URL =
 // ======================================
 // HTML ELEMENTS
 // ======================================
+const distanceElement =
+    document.getElementById("distance");
 
 const temperatureElement =
     document.getElementById("temperature");
@@ -81,6 +83,11 @@ async function loadSensorData() {
         // Update humidity.
         humidityElement.textContent =
             Number(latest.humidity).toFixed(1);
+
+        distanceElement.textContent =
+            latest.distance != null
+                ? Number(latest.distance).toFixed(1)
+                : "--";
 
         // Update connection status.
         statusElement.textContent = "● CONNECTED";
