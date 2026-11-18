@@ -76,6 +76,9 @@ async function loadSensorData() {
         // Latest reading first from Supabase.
         const latest = data[0];
 
+        console.log("Latest Supabase row:", latest);
+        console.log("Distance value:", latest.distance);
+
         // Update temperature.
         temperatureElement.textContent =
             Number(latest.temperature).toFixed(1);
